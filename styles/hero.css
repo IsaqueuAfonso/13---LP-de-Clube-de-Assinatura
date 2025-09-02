@@ -1,0 +1,13 @@
+#hero {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../assets/blur.svg);
+
+  & .hero-container {
+    width: inherit;
+    height: inherit;
+    background-image: url(../assets/hero-background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

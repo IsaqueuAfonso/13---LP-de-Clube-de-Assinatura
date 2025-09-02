@@ -1,0 +1,18 @@
+.button {
+  all: unset;
+  cursor: pointer;
+  font: var(--button);
+}
+
+.pink {
+  background-color: var(--pink-dark);
+  &:hover {
+    background-color: var(--pink-base);
+  }
+}
+.blue {
+  background-color: var(--blue-dark);
+  &:hover {
+    background-color: var(--blue-mid);
+  }
+}
