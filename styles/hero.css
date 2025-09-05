@@ -1,13 +1,113 @@
 #hero {
   width: 100vw;
-  height: 100vh;
-  background-image: url(../assets/blur.svg);
+  height: 95.25rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
 
-  & .hero-container {
-    width: inherit;
-    height: inherit;
-    background-image: url(../assets/hero-background.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 180rem;
+    height: 59.25rem;
+    top: -10vh;
+    right: inherit;
+    background: url(../assets/hero-background.png) center/contain no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    animation: fadeInBlur 2s cubic-bezier(0.7, 0, 1, 1) forwards;
+    opacity: 0;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../assets/blur.svg) center/cover no-repeat;
+    z-index: -2;
+    height: 325vh;
+  }
+
+  header {
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3.5rem;
+      button {
+        width: 5.5625rem;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+      }
+    }
+
+    .hero-title {
+      width: 41rem;
+      margin-top: 10.25rem;
+      margin-inline: auto;
+      text-align: center;
+      gap: 2rem;
+      animation: fadeInBlur 2s cubic-bezier(0.7, 0, 1, 1) forwards;
+      & h1 {
+        font: var(--title-lg);
+        color: var(--text-title);
+      }
+      & span {
+        font: var(--body-lg);
+        color: var(--text-body);
+      }
+    }
+
+    .hero-title-two {
+      width: 75rem;
+      margin-top: 35.375rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      img {
+        width: 5rem;
+        height: 5rem;
+        transform: rotate(30deg);
+        opacity: 0;
+      }
+      h2 {
+        font: var(--subtitle);
+        color: var(--text-body);
+        & > span {
+          opacity: 0.5;
+          & span {
+            font-weight: bolder;
+          }
+        }
+      }
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        img {
+          transform: rotate(100deg);
+        }
+        img:nth-of-type(2) {
+          transform: rotate(-10deg);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  85% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -2,17 +2,66 @@
   all: unset;
   cursor: pointer;
   font: var(--button);
+  color: var(--text-title);
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+  & span {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
 }
 
 .pink {
   background-color: var(--pink-dark);
-  &:hover {
-    background-color: var(--pink-base);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1px;
+    height: 1px;
+    background: var(--pink-base);
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover::before {
+    animation: bubbleExpand 1.4s forwards;
   }
 }
+
 .blue {
   background-color: var(--blue-dark);
-  &:hover {
-    background-color: var(--blue-mid);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1px;
+    height: 1px;
+    background: var(--blue-mid);
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover::before {
+    animation: bubbleExpand 1s forwards;
+  }
+}
+
+@keyframes bubbleExpand {
+  100% {
+    width: max(200%, 200px);
+    height: max(200%, 200px);
   }
 }

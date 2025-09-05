@@ -1,0 +1,83 @@
+#pricing {
+  width: 90rem;
+  height: 77.125rem;
+  background: url(../assets/pricing-background.png) center/contain no-repeat;
+  z-index: 2;
+  position: relative;
+  gap: 8.630625rem;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 59rem;
+    height: 59rem;
+    background: #000f1f;
+    filter: blur(284px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 2rem;
+  }
+
+  & h2 {
+    text-align: center;
+    font: var(--title-sm);
+    color: var(--text-title);
+  }
+
+  & .container-pricings {
+    & .price {
+      width: 18rem;
+      height: 26rem;
+      padding: 2rem 2rem 1.75rem;
+      border-radius: 1.5rem;
+      background-color: var(--shape-base);
+      border: 1px solid var(--shape-stroke);
+    }
+
+    & .monthly {
+      transform: rotate(-8deg);
+      position: relative;
+      top: 50px;
+      z-index: -1;
+      &::after {
+        position: absolute;
+        content: "";
+        top: -27px;
+        left: -35px;
+        background: url(../assets/icon/star-two.svg) no-repeat;
+        width: 2.06125rem;
+        height: 3.394375rem;
+      }
+    }
+    & .Semiannual {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        top: -51px;
+        left: 45px;
+        background: url(../assets/icon/bunny.svg) no-repeat;
+        width: 2.815625rem;
+        height: 3.120625rem;
+      }
+    }
+    & .Annual {
+      transform: rotate(8deg);
+      position: relative;
+      top: 50px;
+      z-index: -1;
+      &::after {
+        position: absolute;
+        content: "";
+        transform: rotate(60deg);
+        bottom: -50px;
+        right: -30px;
+        background: url(../assets/icon/star-two.svg) no-repeat;
+        width: 2.06125rem;
+        height: 3.394375rem;
+      }
+    }
+  }
+}
