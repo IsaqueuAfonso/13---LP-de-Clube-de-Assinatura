@@ -63,30 +63,70 @@
       display: flex;
       align-items: center;
       text-align: center;
-      img {
+      & img {
         width: 5rem;
         height: 5rem;
         transform: rotate(30deg);
         opacity: 0;
       }
-      h2 {
+      & h2 {
         font: var(--subtitle);
         color: var(--text-body);
         & > span {
           opacity: 0.5;
-          & span {
+          & .color {
             font-weight: bolder;
+            color: var(--text-body);
           }
         }
       }
-      div {
+      /* 01 */
+      &:hover h2 > span:nth-child(1) {
+        opacity: 1;
+        transition: opacity 0.1s ease 0.5s;
+      }
+      &:hover h2 > span:nth-child(1) .color {
+        transition: color 0s ease 0.5s;
+        color: var(--blue-light);
+      }
+      &:hover > img {
+        transition: opacity 0.1s ease 0.5s;
+        opacity: 1;
+      }
+      /* 02 */
+      &:hover h2 > span:nth-child(2) {
+        opacity: 1;
+        transition: opacity 0.1s ease 1s;
+      }
+      &:hover h2 > span:nth-child(2) .color {
+        transition: color 0.1s ease 1s;
+        color: var(--blue-light);
+      }
+      &:hover div img:nth-child(1) {
+        transition: opacity 0.1s ease 1s;
+        opacity: 1;
+      }
+      /* 03 */
+      &:hover h2 > span:nth-child(3) {
+        opacity: 1;
+        transition: opacity 0.1s ease 1.5s;
+      }
+      &:hover h2 > span:nth-child(3) .color {
+        transition: color 0.1s ease 1.5s;
+        color: var(--blue-light);
+      }
+      &:hover div img:nth-child(2) {
+        transition: opacity 0.1s ease 1.5s;
+        opacity: 1;
+      }
+      & div {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        img {
+        & img:nth-child(1) {
           transform: rotate(100deg);
         }
-        img:nth-of-type(2) {
+        & img:nth-child(2) {
           transform: rotate(-10deg);
         }
       }
