@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.alignment-justify-content {
+  justify-content: center;
+}
+
 .alignment-align-items {
   align-items: center;
 }
