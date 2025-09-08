@@ -1,6 +1,6 @@
 #hero {
   width: 100vw;
-  height: 95.25rem;
+  max-height: 95.25rem;
   display: flex;
   justify-content: center;
   position: relative;
@@ -30,6 +30,7 @@
   header {
     nav {
       width: 100%;
+      min-width: 20.9375rem;
       display: flex;
       justify-content: space-between;
       margin-top: 3.5rem;
@@ -41,7 +42,8 @@
     }
 
     .hero-title {
-      width: 41rem;
+      width: 100%;
+      max-width: 41rem;
       margin-top: 10.25rem;
       margin-inline: auto;
       text-align: center;
@@ -149,5 +151,43 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 375px) {
+  #hero {
+    max-height: 44.6875rem;
+    &::before {
+      top: 0;
+      max-height: 29rem;
+    }
+    & header {
+      & nav {
+        margin-top: 0;
+        padding: 1.25rem 1.25rem 3rem 1.25rem;
+      }
+      & .hero-title {
+        margin-top: 0;
+        gap: 1rem;
+        & h1 {
+          font-size: 1.75rem;
+        }
+        & span {
+          font-size: 0.875rem;
+        }
+      }
+      & .hero-title-two {
+        width: 100%;
+        margin-top: 15.9375rem;
+        display: block;
+        & h2 {
+          font-size: 1rem;
+        }
+        & img {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
   }
 }

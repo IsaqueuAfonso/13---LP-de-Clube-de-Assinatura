@@ -1,5 +1,6 @@
 .max-width {
-  min-width: min(70rem, 90vw);
+  max-width: min(70rem, 90vw);
+  width: 100%;
 }
 
 .flex {

@@ -27,6 +27,9 @@
   }
 
   & .container-pricings {
+    position: relative;
+    max-width: 18rem;
+    max-height: 26rem;
     & .price {
       width: 18rem;
       height: 26rem;
@@ -36,11 +39,35 @@
       border: 1px solid var(--shape-stroke);
     }
 
-    & .monthly {
-      transform: rotate(-8deg);
+    & .Semiannual {
       position: relative;
-      top: 50px;
+      &::after {
+        position: absolute;
+        content: "";
+        top: -3.1875rem;
+        left: 2.8125rem;
+        background: url(../assets/icon/bunny.svg) no-repeat;
+        width: 2.815625rem;
+        height: 3.120625rem;
+      }
+    }
+
+    & .monthly {
       z-index: -1;
+      position: absolute;
+      transition-duration: 1s;
+    }
+    & .Annual {
+      z-index: -1;
+      position: absolute;
+      transition-duration: 1s;
+    }
+
+    &:hover .monthly {
+      transform: rotate(-8deg);
+      position: absolute;
+      top: 50px;
+      left: -250px;
       &::after {
         position: absolute;
         content: "";
@@ -51,23 +78,11 @@
         height: 3.394375rem;
       }
     }
-    & .Semiannual {
-      position: relative;
-      &::after {
-        position: absolute;
-        content: "";
-        top: -51px;
-        left: 45px;
-        background: url(../assets/icon/bunny.svg) no-repeat;
-        width: 2.815625rem;
-        height: 3.120625rem;
-      }
-    }
-    & .Annual {
+    &:hover .Annual {
       transform: rotate(8deg);
-      position: relative;
+      position: absolute;
       top: 50px;
-      z-index: -1;
+      left: 250px;
       &::after {
         position: absolute;
         content: "";
