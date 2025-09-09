@@ -9,7 +9,6 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-
   & span {
     position: relative;
     z-index: 2;
@@ -55,7 +54,7 @@
   }
 
   &:hover::before {
-    animation: bubbleExpand 1s forwards;
+    animation: bubbleExpand 1.4s forwards;
   }
 }
 

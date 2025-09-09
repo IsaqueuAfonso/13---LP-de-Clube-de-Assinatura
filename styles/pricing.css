@@ -28,8 +28,22 @@
 
   & .container-pricings {
     position: relative;
-    max-width: 18rem;
+    max-width: max-content;
     max-height: 26rem;
+    gap: 1rem;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 944px;
+      height: 944px;
+      left: calc(50% - 944px / 2);
+      top: calc(50% - 944px / 2 - 44px);
+
+      background: #000f1f;
+      filter: blur(284px);
+      z-index: -2;
+    }
+
     & .price {
       width: 18rem;
       height: 26rem;
@@ -37,10 +51,64 @@
       border-radius: 1.5rem;
       background-color: var(--shape-base);
       border: 1px solid var(--shape-stroke);
+      justify-content: space-between;
+      transition: all 1s;
+
+      &:hover {
+        transform: translateY(-12px);
+        box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
+        background-color: var(--shape-hover);
+        border: 1px solid var(--shape-hover);
+      }
+
+      & .header {
+        & h3 {
+          font: var(--title-xs);
+          color: var(--blue-light);
+          margin-bottom: 1.5rem;
+        }
+
+        & p:nth-child(2) {
+          font: var(--title-md);
+          color: var(--text-title);
+          margin-bottom: 0.5rem;
+          & span:nth-child(2) {
+            font: var(--title-xs);
+          }
+        }
+
+        & p:nth-child(3) {
+          font: var(--body-sm);
+          color: var(--text-label);
+        }
+      }
+
+      & .detalls {
+        gap: 0.75rem;
+        & .detail {
+          display: flex;
+          & img {
+            width: 0.87875rem;
+            height: 0.879375rem;
+          }
+          & span {
+            font: var(--body-xs);
+            color: var(--text-body);
+          }
+        }
+
+        & button {
+          width: 14rem;
+          height: 2.5rem;
+          border-radius: 0.5rem;
+          margin-top: 1.75rem;
+        }
+      }
     }
 
     & .Semiannual {
       position: relative;
+      background-color: var(--shape-hover);
       &::after {
         position: absolute;
         content: "";
@@ -50,25 +118,31 @@
         width: 2.815625rem;
         height: 3.120625rem;
       }
+      & .header {
+        & h3 {
+          color: var(--pink-light);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          & span:nth-child(2) {
+            font: var(--tag);
+            color: var(--text-body);
+            background-color: var(--shape-stroke);
+            padding: 0.5625rem 1.25rem;
+            border-radius: 62.4375px;
+          }
+        }
+      }
     }
 
     & .monthly {
-      z-index: -1;
       position: absolute;
-      transition-duration: 1s;
-    }
-    & .Annual {
-      z-index: -1;
-      position: absolute;
-      transition-duration: 1s;
-    }
-
-    &:hover .monthly {
-      transform: rotate(-8deg);
-      position: absolute;
-      top: 50px;
-      left: -250px;
-      &::after {
+      top: 0;
+      left: 0;
+      animation: move-monthly 2s forwards;
+      z-index: 0;
+      s &::after {
         position: absolute;
         content: "";
         top: -27px;
@@ -78,11 +152,11 @@
         height: 3.394375rem;
       }
     }
-    &:hover .Annual {
-      transform: rotate(8deg);
+
+    & .Annual {
+      animation: move-annual 2s forwards;
       position: absolute;
-      top: 50px;
-      left: 250px;
+      z-index: -1;
       &::after {
         position: absolute;
         content: "";
@@ -94,5 +168,29 @@
         height: 3.394375rem;
       }
     }
+
+    &:has(.price.monthly:hover) .Semiannual,
+    &:has(.price.Annual:hover) .Semiannual {
+      background-color: var(--shape-base);
+      border: 1px solid var(--shape-stroke);
+    }
+  }
+}
+
+@keyframes move-monthly {
+  0% {
+    transform: translate(0, 0) rotate(-8deg);
+  }
+  100% {
+    transform: translate(-15.625rem, 3.125rem) rotate(-8deg);
+  }
+}
+
+@keyframes move-annual {
+  0% {
+    transform: translate(0, 0) rotate(8deg);
+  }
+  100% {
+    transform: translate(15.625rem, 3.125rem) rotate(8deg);
   }
 }
