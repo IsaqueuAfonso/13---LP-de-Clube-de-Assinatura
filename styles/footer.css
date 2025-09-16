@@ -1,0 +1,116 @@
+footer {
+  width: 90rem;
+  height: 28.1875rem;
+  background: url("../assets/book-trace-background.png") no-repeat center;
+  background-size: cover;
+
+  & .container-footer {
+    justify-content: space-between;
+    & .brand {
+      gap: 1.5rem;
+      & > img {
+        width: 15.7825rem;
+        height: 3.979375rem;
+      }
+      & .brand-links {
+        gap: 0.3rem;
+        & a {
+          --bg-img: "";
+          background-image: var(--bg-img);
+          background-size: 1.5rem 1.5rem;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 2.5rem;
+          height: 2.5rem;
+          display: block;
+          border-radius: 50%;
+          transition: background-color 0.3s ease;
+
+          -webkit-background-clip: initial;
+          background-clip: initial;
+          &:hover {
+            background-color: var(--shape-stroke);
+          }
+          &[aria-label="instagram"] {
+            --bg-img: url(../assets/icon/instagram.svg);
+
+            &:hover {
+              --bg-img: url(../assets/icon/instagram-hover.svg);
+            }
+          }
+          &[aria-label="twitter"] {
+            --bg-img: url(../assets/icon/twitter.svg);
+
+            &:hover {
+              --bg-img: url(../assets/icon/twitter-hover.svg);
+            }
+          }
+          &[aria-label="facebook"] {
+            --bg-img: url(../assets/icon/facebook.svg);
+
+            &:hover {
+              --bg-img: url(../assets/icon/facebook-hover.svg);
+            }
+          }
+          &[aria-label="discord"] {
+            --bg-img: url(../assets/icon/discord.svg);
+
+            &:hover {
+              --bg-img: url(../assets/icon/discord-hover.svg);
+            }
+          }
+          &[aria-label="whatsapp"] {
+            --bg-img: url(../assets/icon/whatsapp.svg);
+
+            &:hover {
+              --bg-img: url(../assets/icon/whatsapp-hover.svg);
+            }
+          }
+          &[aria-label="mail"] {
+            --bg-img: url(../assets/icon/mail.svg);
+
+            &:hover {
+              --bg-img: url(../assets/icon/mail-hover.svg);
+            }
+          }
+        }
+      }
+    }
+
+    & .links {
+      gap: 3.5rem;
+      & .content,
+      & .help {
+        & h3 {
+          font: var(--title-xs);
+          color: var(--text-body);
+          margin-bottom: 1.25rem;
+        }
+        & .contant-links {
+          gap: 1rem;
+          & a {
+            font: var(--link);
+            color: var(--blue-light);
+            transition: color 0.3s ease;
+            &:hover {
+              color: var(--text-body);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  footer {
+    width: 23.4375rem;
+    height: 25.9375rem;
+
+    & .container-footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+  }
+}

@@ -3,14 +3,13 @@
   max-width: 90rem;
   min-height: 100vh;
   position: relative;
-  margin: 0 auto;
-  gap: 5vw;
 
-  /* ---------- TITLE ---------- */
   & .book-title {
+    margin-top: 14.6875rem;
     text-align: center;
 
     & div {
+      margin-bottom: 13.875rem;
       & h2 {
         font: var(--title-sm);
         color: var(--text-title);
@@ -23,7 +22,6 @@
     }
   }
 
-  /* ---------- IMAGE AREA ---------- */
   & .book-img {
     position: relative;
     display: flex;
@@ -42,8 +40,6 @@
       opacity: 0.5;
       filter: blur(300px);
     }
-
-    /* MAIN IMAGE */
     & .main {
       position: relative;
       width: 100%;
@@ -57,8 +53,6 @@
         position: relative;
         z-index: 10;
       }
-
-      /* ---------- HOVER EFFECTS ---------- */
       &:hover {
         & .aux-1 {
           top: -35%;
@@ -112,7 +106,6 @@
       }
     }
 
-    /* ---------- AUX ELEMENTS ---------- */
     & .aux {
       position: absolute;
       top: 50%;
@@ -151,7 +144,6 @@
         }
       }
 
-      /* ---------- SUB ELEMENTS ---------- */
       & .sub {
         position: absolute;
         top: 100%;
@@ -210,34 +202,31 @@
       }
     }
   }
-
-  /* ---------- RESPONSIVE (375px) ---------- */
-  @media (max-width: 375px) {
-    margin-top: 9.643125rem;
-
+}
+@media (max-width: 375px) {
+  #book {
+    min-height: 0;
+    height: auto;
     & .book-title {
+      margin-top: 9.455625rem;
       margin-bottom: 4rem;
-
       & div {
         margin-bottom: 0.5rem;
-
         & h2 {
           width: max-content;
           font-size: 1.5rem;
         }
-
         & img {
           width: 1.75rem;
           height: 1.75rem;
         }
       }
-
       & p {
         font-size: 0.875rem;
       }
     }
-
     & .book-img {
+      margin-bottom: 5.94375rem;
       &::after {
         content: "";
         width: 298px;
@@ -247,16 +236,13 @@
         background: #3f0f41;
         filter: blur(103.226px);
       }
-
       & .main {
         display: flex;
         justify-content: center;
-
         & > img {
           width: 9.824375rem;
           height: auto;
         }
-
         &:hover {
           & .aux-1 {
             top: -75%;
@@ -264,42 +250,36 @@
             opacity: 1;
             transform: translate(0, 0) scale(1);
           }
-
           & .aux-2 {
             top: 72%;
             left: 16%;
             opacity: 1;
             transform: translate(0, 0) scale(1);
           }
-
           & .aux-3 {
             top: -13%;
             left: 65.9%;
             opacity: 1;
             transform: translate(0, 0) scale(1);
           }
-
           & .aux-4 {
             top: 4%;
             left: 75%;
             opacity: 1;
             transform: translate(0, 0) scale(1);
           }
-
           & .aux {
             & .sub {
               opacity: 1;
               top: 120%;
               transform: translate(-50%, 0) scale(1);
             }
-
             & .sub-2 {
               opacity: 1;
               top: -20%;
               left: -3%;
               transform: translate(-50%, 0) scale(1);
             }
-
             & .sub-4 {
               opacity: 1;
               top: 140%;
@@ -309,23 +289,19 @@
           }
         }
       }
-
       & .aux {
         &.aux-2 img {
           width: 4.680625rem;
           height: auto;
         }
-
         &.aux-3 img {
           width: 3.65rem;
           height: 11.3075rem;
         }
-
         &.aux-4 img {
           width: 3.618125rem;
           height: 11.275625rem;
         }
-
         & .sub {
           &.sub-1 {
             & img {
@@ -339,7 +315,6 @@
               left: -44%;
             }
           }
-
           &.sub-2 {
             & img {
               width: 2.205625rem;
@@ -352,7 +327,6 @@
               left: -48%;
             }
           }
-
           &.sub-4 {
             & img {
               width: 3.06rem;
